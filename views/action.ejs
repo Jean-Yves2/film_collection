@@ -6,7 +6,8 @@
 
     <%- include('nav_bar')%>
   
-    
+    <% if(locals.switch_css){%><p>Test ok</p> <%} 
+    else{ %><p>Just no</p> <% } %>
 
     <%- include('footer'); %>
 </body>
