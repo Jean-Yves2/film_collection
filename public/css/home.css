@@ -1,4 +1,6 @@
-
+body{
+  margin : 0;
+}
 /*nav_bar*/
 ul {
    list-style-type: none;

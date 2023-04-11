@@ -1,14 +1,20 @@
+<%- include('partials/head'); %>
 
+    <body>
 
-<%- include('head'); %>
-<body>
+        <%- include('partials/nav_bar')%>
+            <div class="film_container">
+                <% for (const film of allFilm) { %>
+                    <div> <img src='<%= film.part_one_images_url %><%= film.part_two_images_url %>'
+                            alt="description de l'image"></div>
+                    <div>
+                        <%= film.name %>
+                    </div>
+                    <a href="/favoris/add/<%= film.id %>">+ Ajouter aux favoris</a>
+                    <% } %>
 
-    <%- include('header'); %>
+            </div>
+            <%- include('partials/footer'); %>
+    </body>
 
-    <%- include('nav_bar')%>
-  
-    
-
-    <%- include('footer'); %>
-</body>
-</html>
+    </html>

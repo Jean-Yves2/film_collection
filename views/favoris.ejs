@@ -1,0 +1,23 @@
+<%- include('partials/head'); %>
+
+    <body>
+
+        <%- include('partials/nav_bar')%>
+
+            <% for (const film of favorisFilm) { %>
+                <div>
+                    <img src='<%= film.part_one_images_url %><%= film.part_two_images_url %>'
+                        alt="description de l'image">
+                    <div>
+                        <%= film.name %>
+                    </div>
+                    <a href="/favoris/delete/<%= film.id %>">💥Supprimer des favoris</a>
+                </div>
+
+                <% } %>
+
+                    <p>ici les favoris</p>
+                    <%- include('partials/footer'); %>
+    </body>
+
+    </html>

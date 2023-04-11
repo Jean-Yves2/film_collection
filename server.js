@@ -1,33 +1,34 @@
-const express =require('express');
-const ejs=require('ejs')
-const path=require('path')
+const express = require('express');
+const session= require('express-session');
 
-const app=express();
-app.set("view engine","ejs")
-app.use(express.static(__dirname+'/public'))
+require('dotenv').config();
+const PORT=process.env.PORT
 
-//Part of navigation bar
-const nav_categorie=require('./nav_bar_categorie.json');
+const router = require('./router/router');
+const app = express();
 
+app.set('views', './views')
+app.set('view engine', 'ejs')
 
-app.get('/',(req,res)=>{
+app.use(express.static(__dirname + '/public'));
 
-    
-    res.render(path.join(__dirname,'/views/accueil.ejs'),{title:'Welcome' , nav_categorie })
-})
+app.use(session({
 
-app.get('/:myLink',(req,res)=>{
-
-    const myLink =req.params.myLink.toLowerCase();
-    console.log(myLink)
-    res.locals.switch_css= false;
-
-    if(myLink!='' && myLink !='accueil'){
-        res.locals.switch_css= true;
+    secret:process.env.SERCRET,
+    resave: true,
+    saveUninitialized:true,
+    cookie:{
+        maxAge: (1000*60*60*10)
     }
-    
-    res.render(path.join(__dirname,"/views/"+myLink+".ejs"),{title:myLink , nav_categorie })
 
-})
+}
+))
 
-app.listen(3000)
+//git commit -m 'ajout de la base de donnée controller ,Mapper '
+
+app.use(router);
+
+
+app.listen(PORT, () => {
+    console.log('server launched at: ' + 'http://localhost:' + PORT);
+});
