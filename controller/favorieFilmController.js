@@ -28,7 +28,7 @@ const favorieFilmController = {
 
     },deleteToFavorie : (req,res)=>{
         const id = req.params.id;
-        req.session.favoris=(!req.session.favoris.filter(s=>s.id==id))
+        req.session.favoris=(req.session.favoris.filter(s=>s.id!=id))
 
         res.redirect('/favoris')
 

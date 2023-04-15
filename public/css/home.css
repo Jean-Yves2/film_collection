@@ -1,6 +1,42 @@
 body{
   margin : 0;
+  background-color: #13132D;
+  color:white;
+} 
+/* Organisttaion de la page de Film*/
+.film_container{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
 }
+.box_film{ 
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 185px;
+
+  
+  
+  margin: 5px;
+  padding: 1px;
+
+  
+}
+.film_image{
+  width: 185px;
+  height: 278px;
+}
+.link{
+  text-decoration: none;
+  color:white;
+}
+.film--add{
+  
+}
+
 /*nav_bar*/
 ul {
    list-style-type: none;
