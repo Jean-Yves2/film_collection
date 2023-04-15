@@ -1,0 +1,166 @@
+:root {
+
+    --card-width: 185px;
+    --card-heigth: 278px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background-color: rgb(40, 62, 136);
+    min-height: 100vh;
+
+}
+.film_container{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.card {
+    position: relative;
+    width: var(--card-width);
+    height: var(--card-heigth);
+    border-radius: 15px;
+    /*proprieter box-shadow peut etre ajouter pour plus de style*/
+    overflow: hidden;
+
+    margin: 5px;
+    padding: 1px;
+
+}
+
+.card .poster {
+
+    position: relative;
+
+
+}
+
+/** 
+* Explication
+* * le pseudo element before ajouté avant la div poster 
+* * la position absolute pour le positionner par rapport a son parent le plus proche (il chevauche donc l'element parent )
+*/
+.card .poster::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    bottom: -100px;
+    background: linear-gradient(0deg, rgb(74, 103, 182) 10%, transparent);
+    transition: 0.5s;
+
+    /* maintenir le before au dessus du poster */
+
+    z-index: 1;
+}
+
+.card:hover .poster::before {
+    bottom: 0px;
+    transition: 0.5s;
+
+
+}
+
+.card:hover .poster img {
+
+    transform: translateY(-30px);
+    transition: 0.5s;
+    filter: blur(1px);
+}
+
+.card .poster img {
+
+    width: 100%;
+    transition: 0.5s;
+}
+
+/* ? Nouvelle Etape ajout de la description  ? */
+
+.card .details {
+    position: absolute;
+    margin-left: 0px;
+    width: 98%;
+    bottom: -20px;
+    z-index: 2;
+    transition: 0.5s;
+    color: white;
+}
+
+.card:hover .details {
+    bottom: 80px;
+    transition: 0.5s;
+}
+
+/* Genre  details_date details_title */
+
+.details_title{
+    padding-bottom: 10px;
+}
+.details_genre {
+    
+    border-radius: 10px;
+    /* haut | droit | bas | gauche */
+    padding: 5px 10px 5px 10px;
+    
+}
+
+.genre--red {
+    background-color: red;
+
+}
+
+.genre--blue {
+    background-color: blue;
+
+}
+.details_date{
+    background-color: black;
+    border-radius: 10px;
+    /* haut | droit | bas | gauche */
+    padding: 5px 10px 5px 10px;
+}
+/*   Rating         */
+.rating{
+    padding-top: 10px;
+}
+.card .details .rating {
+    color: gold;
+}
+
+/****************/
+
+/*nav_bar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #302a2a;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #070707;
+  }
+  /***********************************************************************/

@@ -3,20 +3,55 @@
     <body>
 
         <%- include('partials/nav_bar')%>
-            <div class="film_container">
 
-                <% for (const film of allFilm) { %>
-                    <div class="box_film"> <img class="film_image"
-                            src='<%= film.part_one_images_url %><%= film.part_two_images_url %>'
-                            alt="Image du film <%= film.name %>">
-                        <p>
-                            <%= film.name %>
-                        </p>
-                        
-                    </div>
-                    <% } %>
-                    
-            </div>
+            <main>
+
+                <div class="film_container">
+
+                    <% for (const film of allFilm) { %>
+
+                        <div class="card">
+
+                            <div class="poster">
+                                <img src='<%= film.part_one_images_url %><%= film.part_two_images_url %>'
+                                    alt="Image du film <%= film.name %>">
+                            </div>
+                            <div class="details">
+
+                                <h3 class="details_title">
+                                    <%= film.name %>
+                                </h3>
+
+                                <div class="tags">
+
+                                    <span class=" details_genre genre--red">Action</span>
+                                    <span class=" details_genre genre--blue">Sci-fi</span>
+                                    <span class="details_date">
+                                        <%= film.date %>
+                                    </span>
+
+                                </div>
+
+
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <% } %>
+
+                </div>
+
+            </main>
+
+
             <%- include('partials/footer'); %>
     </body>
 

@@ -6,7 +6,8 @@
 `psql -U postgres -d nom_de_la_base_de_donnees`
 
 > injecter la base de donée dans notre  base create_db crée avec l'utilisateur
-`psql -U yves -d create_db -f data\film_db.sql `
+`psql -U yves -d create_db -f data\film_db.sql ` 
+>attention au `\` qui est en `Windows`
 
 
 >Les status de tout les services
