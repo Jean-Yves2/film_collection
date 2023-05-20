@@ -6,12 +6,13 @@ const favorieFilmController=require('../controller/favorieFilmController')
 
 const router = express.Router();
 
-router.get('/',(_req,res)=>{
+//Accueil
+router.get(['/','/accueil'],(_req,res)=>{
     res.redirect('/accueil/page/1')
 })
 
-//Pagination
 router.get('/accueil/page/:id',filmController.homePage)
+
 
 router.get('/favoris',favorieFilmController.favoris)
 

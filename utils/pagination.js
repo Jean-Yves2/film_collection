@@ -5,12 +5,11 @@ const dataMapper = require('../controller/dataMapper');
 const pagination = {
     limitOnPage: 10,
     currentPage: 2,
-    numberOfPage: async () => {
+    numberOfPage: (count_number_page) => {
 
-        const {rows} = await dataMapper.selectAllFilm();
-        const totalPage=Math.ceil(rows.length/pagination.limitOnPage)
+        const totalPage=Math.ceil(count_number_page/pagination.limitOnPage)
         
-        console.log(totalPage);
+        return totalPage;
 
     },
     getFilms: async (offset) => {
