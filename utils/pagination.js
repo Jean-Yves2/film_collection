@@ -3,8 +3,7 @@
 const dataMapper = require('../controller/dataMapper');
 
 const pagination = {
-    limitOnPage: 10,
-    currentPage: 2,
+    limitOnPage: 9,
     numberOfPage: (count_number_page) => {
 
         const totalPage=Math.ceil(count_number_page/pagination.limitOnPage)
@@ -12,35 +11,26 @@ const pagination = {
         return totalPage;
 
     },
-    getFilms: async (offset) => {
-        const { rows } = await dataMapper.selectByPagination(pagination.limitOnPage, offset);
-
-        return rows;
-    },
-    nextPage: async () => {
+    nextPage: (activePage) => {
         try {
-            
-            pagination.currentPage++;
-            const offset = (pagination.currentPage - 1) * pagination.limitOnPage;
-    
-            const allFilm = await pagination.getFilms(offset);
-            return allFilm;
+
+            activePage++
+            return activePage ;
             
         } catch (error) {
             console.log(error)
         }
         
     },
-    previousPage: async () => {
+    previousPage: (activePage) => {
 
         try {
-            pagination.currentPage--;
-        
-            const offset = (pagination.currentPage - 1) * pagination.limitOnPage;
 
-            const allFilm = await pagination.getFilms(offset);
-            return allFilm;
-            
+            activePage--;
+            if(activePage==0)return 1;
+
+            return activePage ;
+
         } catch (error) {
             console.log(error)
         }
@@ -52,8 +42,6 @@ const pagination = {
 
 
 }
-
-pagination.numberOfPage();
 
 module.exports = pagination;
 
