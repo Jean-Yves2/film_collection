@@ -12,7 +12,7 @@ const filmController = {
 
             const id = parseInt(req.params.id);
             const activePage = id;
-            console.log(activePage)
+            
             const limitOnPage = pagination.limitOnPage;
             const offset = (id - 1) * 10
 
