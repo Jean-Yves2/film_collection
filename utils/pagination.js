@@ -11,9 +11,9 @@ const pagination = {
         return totalPage;
 
     },
-    nextPage: (activePage) => {
+    nextPage: (activePage ,countNumberOfPage) => {
         try {
-
+            if(activePage==countNumberOfPage)return activePage
             activePage++
             return activePage ;
             
