@@ -7,19 +7,19 @@
             <main>
 
                 <div class="film_container">
-
+                    
                     <% for (const film of allFilm) { %>
 
                         <div class="card">
 
                             <div class="poster">
-                                <img src='<%= film.part_one_images_url %><%= film.part_two_images_url %>'
-                                    alt="Image du film <%= film.name %>">
+                                <img src='https://image.tmdb.org/t/p/w780<%= film.poster_path %>'
+                                    alt="Image du film <%= film.original_title %>">
                             </div>
                             <div class="details">
 
                                 <h3 class="details_title">
-                                    <%= film.name %>
+                                    <%= film.original_title %>
                                 </h3>
 
                                 <div class="tags">
@@ -27,7 +27,7 @@
                                     <span class=" details_genre genre--red">Action</span>
                                     <span class=" details_genre genre--blue">Sci-fi</span>
                                     <span class="details_date">
-                                        <%= film.date %>
+                                        <%=  convert.getYearFromDate(film.release_date)%>
                                     </span>
 
                                 </div>
@@ -54,6 +54,7 @@
                     <a href="/accueil/page/<%= pagination.nextPage(activePage ,countNumberOfPage)%>">Suivant</a>
 
                 </div>
+
             </main>
 
 

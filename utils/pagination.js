@@ -3,7 +3,7 @@
 const dataMapper = require('../controller/dataMapper');
 
 const pagination = {
-    limitOnPage: 9,
+    limitOnPage: 20,
     numberOfPage: (count_number_page) => {
 
         const totalPage=Math.ceil(count_number_page/pagination.limitOnPage)
