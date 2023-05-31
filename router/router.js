@@ -6,7 +6,7 @@ const favorieFilmController=require('../controller/favorieFilmController')
 
 const router = express.Router();
 
-//Accueil
+/*Accueil*/
 router.get(['/','/accueil'],(_req,res)=>{
     res.redirect('/accueil/page/1')
 })
