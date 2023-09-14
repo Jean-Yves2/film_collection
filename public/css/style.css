@@ -15,8 +15,17 @@ body {
     min-height: 100vh;
 
 }
-.film_container{
 
+.page_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+.film_container{
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
