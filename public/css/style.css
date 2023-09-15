@@ -15,6 +15,12 @@ body {
     min-height: 100vh;
 
 }
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 
 .page_container{
     display: flex;
@@ -183,3 +189,28 @@ ul {
     color: white;
     background-color: #302a2a;
   }
+
+ /*******************************Pagination****************************************/
+
+ .page_pagination{
+    padding: 20px 0;
+    height: 40px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+ }
+
+ .page_pagination a {
+    display: flex;
+    width: 100px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #302a2a;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
