@@ -172,4 +172,14 @@ ul {
   li a:hover {
     background-color: #070707;
   }
-  /***********************************************************************/
+  /*******************************Footer****************************************/
+  footer{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    background-color: #302a2a;
+  }
