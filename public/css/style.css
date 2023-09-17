@@ -15,8 +15,23 @@ body {
     min-height: 100vh;
 
 }
-.film_container{
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 
+.page_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+.film_container{
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -163,4 +178,56 @@ ul {
   li a:hover {
     background-color: #070707;
   }
-  /***********************************************************************/
+
+  .nav-bar--section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+  }
+
+  .nav-bar--section li button{
+    background-color: #302a2a;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-color: white;
+  }
+  /*******************************Footer****************************************/
+  footer{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    background-color: #302a2a;
+  }
+
+ /*******************************Pagination****************************************/
+
+ .page_pagination{
+    padding: 20px 0;
+    height: 40px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+ }
+
+ .page_pagination a {
+    display: flex;
+    width: 100px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #302a2a;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
