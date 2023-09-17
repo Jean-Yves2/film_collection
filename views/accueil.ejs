@@ -5,8 +5,8 @@
         <%- include('partials/nav_bar')%>
 
             <main>
-
-                <div class="film_container">
+                <div class="page_container">
+                    <div class="film_container">
                     
                     <% for (const film of allFilm) { %>
 
@@ -47,11 +47,12 @@
 
                         <% } %>
 
+                    </div>
                 </div>
-                <div>
+                <div class=page_pagination>
 
-                    <a href="/accueil/page/<%= pagination.previousPage(activePage)%>">Précédent</a>
-                    <a href="/accueil/page/<%= pagination.nextPage(activePage ,countNumberOfPage)%>">Suivant</a>
+                    <a href="/accueil/page/<%= pagination.previousPage(activePage)%>"> << Précédent</a>
+                    <a href="/accueil/page/<%= pagination.nextPage(activePage ,countNumberOfPage)%>"> Suivant >></a>
 
                 </div>
 
