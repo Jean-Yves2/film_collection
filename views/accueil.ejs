@@ -23,9 +23,20 @@
                                 </h3>
 
                                 <div class="tags">
+                                    <%
+                                        const genre_ids = JSON.parse(film.genre_ids);
+                                        let index = 0;
+                                        while (index < genre_ids.length && index < 2) {
+                                        const category = film_categories.find(categorie => categorie.code === genre_ids[index]);
+                                    %>
 
-                                    <span class=" details_genre genre--red">Action</span>
-                                    <span class=" details_genre genre--blue">Sci-fi</span>
+                                    <span class="details_genre genre--pourpre"><%= category ? category.category : 'Catégorie non trouvée' %></span>
+
+                                    <%
+                                        index++;
+                                        }
+                                    %>
+
                                     <span class="details_date">
                                         <%=  convert.getYearFromDate(film.release_date)%>
                                     </span>
