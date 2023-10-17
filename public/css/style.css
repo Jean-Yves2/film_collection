@@ -120,6 +120,14 @@ main{
 .details_title{
     padding-bottom: 10px;
 }
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap:3px;
+}
 .details_genre {
     
     border-radius: 10px;
@@ -128,15 +136,11 @@ main{
     
 }
 
-.genre--red {
-    background-color: red;
+.genre--pourpre {
+    background-color: rgb(91, 59, 118);
 
 }
 
-.genre--blue {
-    background-color: blue;
-
-}
 .details_date{
     background-color: black;
     border-radius: 10px;

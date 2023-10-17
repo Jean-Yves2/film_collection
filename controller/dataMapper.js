@@ -9,7 +9,6 @@ const dataMapper = {
         if (limitOnPage) {
 
             result = await client.query( `SELECT * , ( SELECT COUNT(*) FROM films ) AS total_films FROM films limit $1 OFFSET $2`, [limitOnPage,offset])
-
         } else {
 
             result = await client.query(`SELECT * , ( SELECT COUNT(*) FROM films ) AS total_films FROM films limit 10 OFFSET $1`,[offset])
