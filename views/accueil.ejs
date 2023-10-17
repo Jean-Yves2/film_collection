@@ -23,14 +23,20 @@
                                 </h3>
 
                                 <div class="tags">
-                                    <% for (genre_id of JSON.parse(film.genre_ids)) {
-                                        
-                                        const categories_name=film_categories.find((categorie)=>categorie.code==genre_id);
-                                        
-                                        %> 
+                                    <%
+                                        const genre_ids = JSON.parse(film.genre_ids);
+                                        let index = 0;
+                                        while (index < genre_ids.length && index < 2) {
+                                        const category = film_categories.find(categorie => categorie.code === genre_ids[index]);
+                                    %>
 
-                                        <span class=" details_genre genre--red"><%=categories_name.category%></span>
-                                    <%}%>
+                                    <span class="details_genre genre--pourpre"><%= category ? category.category : 'Catégorie non trouvée' %></span>
+
+                                    <%
+                                        index++;
+                                        }
+                                    %>
+
                                     <span class="details_date">
                                         <%=  convert.getYearFromDate(film.release_date)%>
                                     </span>
