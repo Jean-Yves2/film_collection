@@ -1,13 +1,77 @@
-
 <%- include('partials/head'); %>
-<body>
+
+    <body>
+
+        <%- include('partials/nav_bar')%>
+
+            <main>
+                <div class="page_container">
+                    <div class="film_container">
+                    
+                    <% for (const film of allFilm) { %>
+
+                        <div class="card">
+
+                            <div class="poster">
+                                <img src='https://image.tmdb.org/t/p/w780<%= film.poster_path %>'
+                                    alt="Image du film <%= film.original_title %>">
+                            </div>
+                            <div class="details">
+
+                                <h3 class="details_title">
+                                    <%= film.original_title %>
+                                </h3>
+
+                                <div class="tags">
+                                    <%
+                                        const genre_ids = JSON.parse(film.genre_ids);
+                                        let index = 0;
+                                        while (index < genre_ids.length && index < 2) {
+                                        const category = film_categories.find(categorie => categorie.code === genre_ids[index]);
+                                    %>
+
+                                    <span class="details_genre genre--pourpre"><%= category ? category.category : 'Catégorie non trouvée' %></span>
+
+                                    <%
+                                        index++;
+                                        }
+                                    %>
+
+                                    <span class="details_date">
+                                        <%=  convert.getYearFromDate(film.release_date)%>
+                                    </span>
+
+                                </div>
 
 
-    <%- include('partials/nav_bar')%>
-  
-    <% if(locals.switch_css){%><p>Test ok</p> <%} 
-    else{ %><p>Just no</p> <% } %>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
 
-    <%- include('partials/footer'); %>
-</body>
-</html>
+                            </div>
+
+                        </div>
+
+                        <% } %>
+
+                    </div>
+                </div>
+                <div class=page_pagination>
+
+                    <a href="/category/<%=category_name%>/<%= pagination.previousPage(activePage)%>"> << Précédent</a>
+                    <a href="/category/<%=category_name%>/<%= pagination.nextPage(activePage ,countNumberOfPage)%>"> Suivant >></a>
+
+                </div>
+
+            </main>
+
+
+
+            <%- include('partials/footer'); %>
+    </body>
+
+    </html>
