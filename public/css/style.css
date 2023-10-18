@@ -199,6 +199,36 @@ ul {
     margin: 10px;
     border-color: white;
   }
+
+  /*****************nav-bar Categorie**********/
+  .nav-bar--film_categorie{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap :10px
+    }
+    .nav-bar--film_categorie li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 100px;
+        background-color: rgb(91, 59, 118);
+        border-radius: 15px;
+    }
+    .nav-bar--film_categorie li:hover{
+        background-color: #070707;
+        
+    }
+    /*******hidden class******/
+    .hidden_category{
+        display: none;
+    }
+
+
   /*******************************Footer****************************************/
   footer{
     display: flex;
