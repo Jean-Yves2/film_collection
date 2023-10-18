@@ -1,9 +1,16 @@
 
    <script>
-   function display_category(){
-    let category= document.getElementsByClassName('nav-bar--film_categorie')[0];
-    category.classList.toggle('hidden')
-}</script>
+   function display_category() {
+    let category_hidden = document.querySelector('.hidden_category');
+    let category_display = document.querySelector('.nav-bar--film_categorie');
+
+    if (category_hidden) {
+        category_hidden.classList.replace('hidden_category', 'nav-bar--film_categorie');
+    } else {
+        category_display.classList.replace('nav-bar--film_categorie', 'hidden_category');
+    }
+}
+</script>
     <footer>
        <p> © copyright - Tous droits réservés </p> 
     </footer>
