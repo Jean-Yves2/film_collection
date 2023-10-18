@@ -28,6 +28,18 @@ const filmController = {
             console.error(error);
         }
 
+    },
+    categoryPage:async(req,res)=>{
+
+        try{
+            const title =req.params.category.toUpperCase()
+            res.render('../views/categoryPage',{title:title, nav_categorie})
+
+        }catch(error){
+            console.error(error)
+        }
+
+
     }
 
 }

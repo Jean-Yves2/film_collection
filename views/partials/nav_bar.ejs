@@ -11,12 +11,14 @@
     </ul> 
     <ul class="nav-bar--film_categorie">
         <% for (const film_type of film_categories ) { %>
-            <li>
-                <%= film_type.category %>
-            </li>
 
+            <a href="/<%= film_type.category.toLowerCase() %>">
+                <li>
+                    <%= film_type.category %>
+                </li>
+            </a>
+            
         <% } %>
 
     </ul>
-
 </nav>
