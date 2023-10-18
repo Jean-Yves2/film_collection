@@ -12,7 +12,7 @@
     <ul class="hidden_category">
         <% for (const film_type of film_categories ) { %>
 
-            <a href="/<%= film_type.category.toLowerCase() %>">
+            <a href="/category/<%= film_type.category.toLowerCase() %>">
                 <li>
                     <%= film_type.category %>
                 </li>

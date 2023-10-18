@@ -18,7 +18,7 @@ router.get('/favoris',favorieFilmController.favoris)
 
 router.get('/favoris/add/:id',favorieFilmController.addToFavorie)
 router.get('/favoris/delete/:id',favorieFilmController.deleteToFavorie)
-router.get('/:category',filmController.categoryPage)
+router.get('/category/:category',filmController.categoryPage)
 
 
 module.exports=router;
