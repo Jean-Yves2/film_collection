@@ -2,7 +2,7 @@
         
     <ul class="nav-bar--section">
         <% for(const categorie of nav_categorie) { %>
-            <% if (categorie.name ==="menu") {%>
+            <% if (categorie.name ==="catégories") {%>
             <li><button onclick="display_category()"><%= categorie.name.toUpperCase() %></button></li>
             <% } else {%>
             <li><a href= '/<%=categorie.name %>' > <%= categorie.name.toUpperCase() %> </a></li>
