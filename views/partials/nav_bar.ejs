@@ -3,11 +3,20 @@
     <ul class="nav-bar--section">
         <% for(const categorie of nav_categorie) { %>
             <% if (categorie.name ==="menu") {%>
-            <li><button><%= categorie.name.toUpperCase() %></button></li>
+            <li><button onclick="display_category()"><%= categorie.name.toUpperCase() %></button></li>
             <% } else {%>
             <li><a href= '/<%=categorie.name %>' > <%= categorie.name.toUpperCase() %> </a></li>
             <% } %>
         <% } %>
     </ul> 
+    <ul class="nav-bar--film_categorie">
+        <% for (const film_type of film_categories ) { %>
+            <li>
+                <%= film_type.category %>
+            </li>
+
+        <% } %>
+
+    </ul>
 
 </nav>
