@@ -1,7 +1,3 @@
-
-
-const dataMapper = require('../controller/dataMapper');
-
 const pagination = {
     limitOnPage: 20,
     numberOfPage: (count_number_page) => {
