@@ -32,8 +32,20 @@ const filmController = {
     categoryPage:async(req,res)=>{
 
         try{
-            const title =req.params.category.toUpperCase()
-            res.render('../views/categoryPage',{title:title, nav_categorie})
+            const title =req.params.category
+            const category_name=title;
+            const id = parseInt(req.params.id);
+            const activePage = id;
+            
+            const limitOnPage = pagination.limitOnPage;
+            const offset = (id - 1) * limitOnPage;
+            const selectByCategory= await dataMapper.selectByCategory(title,limitOnPage, offset)
+            const allFilm=selectByCategory.rows;
+
+            const countAllFilm = parseInt(allFilm[0].total_films);
+            const countNumberOfPage = pagination.numberOfPage(countAllFilm);
+
+            res.render('../views/categoryPage',{title:title.toUpperCase(), nav_categorie,allFilm, activePage, pagination , convert,countNumberOfPage,film_categories,category_name})
 
         }catch(error){
             console.error(error)
