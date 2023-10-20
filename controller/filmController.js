@@ -19,9 +19,9 @@ const filmController = {
             const selectAllFilmOnData = await dataMapper.selectAllFilm(limitOnPage, offset);
 
             const allFilm = selectAllFilmOnData.rows;
+            
             const countAllFilm = parseInt(allFilm[0].total_films);
             const countNumberOfPage = pagination.numberOfPage(countAllFilm);
-
             res.render('../views/accueil', { title: 'FilmVue', nav_categorie, allFilm, activePage, pagination , convert,countNumberOfPage,film_categories});
 
         } catch (error) {
@@ -39,20 +39,34 @@ const filmController = {
             
             const limitOnPage = pagination.limitOnPage;
             const offset = (id - 1) * limitOnPage;
-            const selectByCategory= await dataMapper.selectByCategory(title,limitOnPage, offset)
-            const allFilm=selectByCategory.rows;
-
-            const countAllFilm = parseInt(allFilm[0].total_films);
-            const countNumberOfPage = pagination.numberOfPage(countAllFilm);
-
-            res.render('../views/categoryPage',{title:title.toUpperCase(), nav_categorie,allFilm, activePage, pagination , convert,countNumberOfPage,film_categories,category_name})
-
-        }catch(error){
-            console.error(error)
+            const selectByCategory = await dataMapper.selectByCategory(title, limitOnPage, offset);
+            const allFilm = selectByCategory.rows;
+            let countNumberOfPage = 1;
+    
+            if (allFilm[0]) {
+                const countAllFilm = parseInt(allFilm[0].total_films);
+                countNumberOfPage = pagination.numberOfPage(countAllFilm);
+            } else {
+                res.render('../views/404', { title: "404", nav_categorie, film_categories });
+                return;
+            }
+    
+            res.render('../views/categoryPage', {
+                title: title.toUpperCase(),
+                nav_categorie,
+                allFilm,
+                activePage,
+                pagination,
+                convert,
+                countNumberOfPage,
+                film_categories,
+                category_name
+            });
+        } catch (error) {
+            console.error(error);
         }
-
-
     }
+    
 
 }
 

@@ -9,9 +9,13 @@ const pagination = {
     },
     nextPage: (activePage ,countNumberOfPage) => {
         try {
-            if(activePage==countNumberOfPage)return activePage
-            activePage++
+            if(activePage==countNumberOfPage){
+                return activePage
+            }else{activePage++
             return activePage ;
+            }
+            
+            
             
         } catch (error) {
             console.log(error)
