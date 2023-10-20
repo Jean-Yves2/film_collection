@@ -13,13 +13,22 @@ body {
 
     background-color: rgb(40, 62, 136);
     min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
 
+}
+header {
+    width: 100%;
 }
 main{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    flex: 1;
+    flex-direction: column;
 }
 
 .page_container{
@@ -246,7 +255,7 @@ ul {
  .page_pagination{
     padding: 20px 0;
     height: 40px;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
