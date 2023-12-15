@@ -11,6 +11,7 @@
         <% for (const film of allFilm) { %>
 
         <div class="card">
+          <button id="like" type="button">&#10084</button>
 
           <div class="poster">
             <img src='https://image.tmdb.org/t/p/w780<%= film.poster_path %>' alt="Image du film <%= film.original_title %>">

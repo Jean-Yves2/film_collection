@@ -59,6 +59,25 @@ main{
     padding: 1px;
 
 }
+.card #like , #like.liked {
+    position: absolute;
+    z-index: 2;
+    right:5px;
+    top: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    background: none;
+    font-size: 24px;
+
+}
+.card #like{
+    color: rgb(163, 126, 52);
+
+}
+#like.liked {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(228, 7, 7);
+  }
 
 .card .poster {
 
